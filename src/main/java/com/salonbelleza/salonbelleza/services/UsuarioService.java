@@ -20,8 +20,15 @@ public class UsuarioService {
     }
     
     //Guardar usuario
-    public UsuarioModel guardarUsuario(UsuarioModel usuario){
-        return usuarioRepository.save(usuario);
+    public String guardarUsuario(UsuarioModel usuario){
+        String message = "";
+        try {
+            usuarioRepository.save(usuario);
+            message = "Usuario creado con exito";
+        } catch (Exception e) {
+            message = e.getMessage();
+        }
+        return message;
     }
 
     //Obtener usuarios por id
