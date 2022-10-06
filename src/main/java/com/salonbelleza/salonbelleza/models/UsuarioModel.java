@@ -1,13 +1,12 @@
 package com.salonbelleza.salonbelleza.models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
-
 
 @Entity
 @Table(name = "usuarios")
@@ -18,12 +17,13 @@ public class UsuarioModel {
     private int id;
     @NotBlank(message = "Primer Nombre es requerido")
     private String primer_nombre;
-    @NotBlank(message = "Segundo Nombre es requerido")
+    /// @NotBlank(message = "Segundo Nombre es requerido")
     private String segundo_nombre;
     @NotBlank(message = "Primer Apellido es requerido")
     private String primer_apellido;
-    @NotBlank(message = "Segundo Apellido es requerido")
+    /// @NotBlank(message = "Segundo Apellido es requerido")
     private String segundo_apellido;
+    
     @NotEmpty(message = "Email invalido")
     @Email
     private String email;

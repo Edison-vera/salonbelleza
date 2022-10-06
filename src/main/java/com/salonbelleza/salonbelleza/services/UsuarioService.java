@@ -3,6 +3,8 @@ package com.salonbelleza.salonbelleza.services;
 import java.util.ArrayList;
 import java.util.Optional;
 
+import javax.management.Query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,9 @@ public class UsuarioService {
     public String guardarUsuario(UsuarioModel usuario){
         String message = "";
         try {
+            if(usuarioRepository.existsByEmail(usuario.getEmail())) {
+                throw new Exception("Email ya se encuentra registrado");
+            }
             usuarioRepository.save(usuario);
             message = "Usuario creado con exito";
         } catch (Exception e) {
