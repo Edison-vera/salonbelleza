@@ -1,10 +1,7 @@
 package com.salonbelleza.salonbelleza.controllers;
-
 import java.util.ArrayList;
 import java.util.Optional;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +19,7 @@ import com.salonbelleza.salonbelleza.services.UsuarioService;
 @RestController
 @RequestMapping("/usuario")
 public class UsuarioController {
+
     @Autowired
     UsuarioService usuarioService;
 
